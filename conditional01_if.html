@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+
+// 1. if 예제 - 숫자계산  (주의: 표현식에 해당할 경우에만 실행, 거짓이면 실행할 구문이 없어서 빈 페이지 )
+        let x= 5
+        let y= 6
+        if(x==y){document.write("x와 y 값은 같습니다")}
+        
+        // // 2. if, else 조건문
+        // var a = 10
+        // var b = 20
+        // if(a==b){document.write("a와 b는 같습니다.")}
+        // else {document.write("a와 b는 같지 않습니다.") }   
+        // // 3. if, elseif , else
+
+        // var num = prompt("숫자를 입력해주세요")
+        // if(num>20) {document.write('<p> 20이상 입력하였습니다.</p>')}
+        // else if(num==20) {document.write('<p> 20을 입력하였습니다.</p>')}
+        // else document.write('<p> 20이하를 입력하였습니다.</p>') 
+        // 실행문이 한줄일 경우 {} 생략가능
+
+        //  let x=4
+        //  let y=7
+
+        //  let result = (x>y)? x: y
+        //  document.write('둘중에 더 큰 수는'+result+'입니다')
+
+// 1. if 예제 - prompt 팝업창에 input입력값을 받고 조건식으로 아이디, 비번을 검증하는 예제
+        let id = 'korea'
+        let pw = 'korea123'   
+
+        let inputId = prompt('아이디를 입력하세요', ' ')
+        let inputPw = prompt('비밀번호를 입력하세요', ' ')
+
+        if(id == inputId){ 
+            if(pw ==inputPw){ document.write(id+'님이 로그인이 되었습니다')}
+            else{ alert('비밀번호가 틀렸습니다.')}
+            //location.reload() 새로갱신
+        }
+
+        else{ alert('아이디가 틀렸습니다')  
+        //location.reload()
+        }
+
+
+     </script>
+
+
+</body>
+</html>

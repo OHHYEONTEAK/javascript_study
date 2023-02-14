@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 객체내부에 함수 넣기 및 일반함수와 화살표함수의 this 영역차이</title>
+</head>
+<body>
+    <script>
+        // 예제1)
+       const dog= {
+            name: '바둑이',
+            sound:'멍멍!!',
+            say: function say()
+            {console.log(this.sound)}
+        }
+
+        const cat = {
+            name: '네오',
+            sound: '야옹~~'
+           
+        }
+
+       dog.say();  // 호출 - 호출을 해야 콘솔창에서 출력이 된다! 
+    // cat 도 sound에 담긴 소리를 출력하고 싶다!
+      cat.say = dog.say;
+      cat.say()  // 호출 
+
+    // 예제2) 객체내부에 일반함수 this와 화살표함수 this 의 영역(scope) 차이 비교 
+
+    const obj = {
+        goal: '객체내부 일반함수의 this, 화살표함수의 this 차이점을 알아보는 코드',
+        a : function a (){console.log('첫번째 일반함수', this)},
+        b(){console.log('두번째 일반함수', this)} ,
+        cc : function c(){console.log('세번째 일반함수 ', this)},
+
+        d : ()=>{console.log('네번째 화살표함수', this)},    // 화살표함수는 일반함수의 this와 다르게 더 상위 부모영역을 가리킨다.
+                                                           // 웹에서 상위영역은 window 이기에 window가 콘솔에 출력됨 !
+
+        e : function e(){console.log('다섯번째 객체의 키값으로 특정데이터 가져오기: ', this.goal)},
+        f : function f(){console.log('여섯번째 객체의 키값으로 특정데이터 가져오기: ', this.goalTwo)}
+    }
+
+    obj.a() 
+    obj.b()
+    obj.cc()
+    obj.d()
+    obj.e()
+    obj.f()
+
+
+
+
+
+    </script>   
+</body>
+</html>

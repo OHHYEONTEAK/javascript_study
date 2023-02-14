@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    const device = 'mouse'
+
+    switch(device){
+        case 'keyboard' : console.log('키보드')
+        break
+        case 'mouse' : console.log('마우스')
+        break   // break 가 없으면 멈추지 않고 아래의 코드로 진행이 계속됨. (해당 case조건에 해당하지 않는경우도 출력됨)
+        case 'monitor' : console.log('모니터')
+        break
+        default : console.log('알수 없는 장비입니다!!')
+    }
+
+
+    /* switch 문  vs if문 비교 
+            1-1. switch문
+            장점:  가독성이 높다.  
+            단점:  상수 - switch()의 괄호안에는 데이터가 자유롭게 들어갈수 있지만, 
+            case 뒤에는 변수, 조건식등이 오게되면 switch 문이 작동하지 않는다. 
+    */
+    
+   /* 1) if 문은 표현식에 변수활용 가능  */     
+    /*      let num = prompt( "원하는 숫자를 입력하세요.", "" );
+
+            if ( num > 0 ){
+                document.write ( "입력한 숫자는 양수입니다." );
+            }else if ( num = 0 ){
+                document.write ( "입력한 숫자는 0입니다." );
+            }else if ( num < 0){
+                document.write ( "입력한 숫자는 음수입니다." );
+            }else{
+                document.write ( "숫자를 입력해주세요." );
+            }
+
+    */
+      
+   /* 2) switch는 case 뒤에 변수 활용 불가능 - 아래의 코드는 에러 발생 !!!   */
+       /*   let num = prompt( " 숫자를 입력하세요.", "" );
+
+            switch ( num ){
+                case num > 0 :  
+                document.write ( "입력한 숫자는 양수입니다." );
+                break;
+
+                case num = 0 :   
+                document.write ( "입력한 숫자는 0입니다." );
+                break;
+
+                case num < 0 :  
+                document.write ( "입력한 숫자는 음수입니다." );
+                break;
+
+                default
+                document.write ( "숫자를 입력해주세요." );
+             }
+
+     */ 
+    
+
+    let coffee = prompt('가격을 조회하고 싶은 커피종류를 입력하세요')
+
+    // 한줄 주석처리 , /*  */ 여러줄 주석처리  
+     switch(coffee){
+        case '아메리카노' : document.write('1500원')
+        break
+        case '카페라떼' : document.write('2000원')
+        break
+        case '카푸치노' : document.write('3000원')
+        break
+        default : document.write('잘못된 단어를 입력했습니다. ')
+    }
+    
+    /* 1-2. if문
+    if(coffee=='아메리카노'){document.write('1500원')}
+    else if(coffee=='카페라떼'){document.write('2000원')}
+    else if(coffee=='카푸치노'){document.write('3000원')}
+    else{ document.write('잘못된 단어를 입력했습니다. ') } 
+    */
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

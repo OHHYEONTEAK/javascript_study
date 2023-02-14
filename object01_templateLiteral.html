@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+  // 첫번째, 객체 생성 
+    const bulgogiPizza = { 
+        topping: 'beef',
+        price: 26000,
+       'pizza brand': '59pizza'
+    }
+   // 두번째, 객체 생성  
+    const seafoodPizza= {
+        topping: 'shrimp',
+        price: 30000,
+        'pizza brand': 'Mr.pizza'
+    }
+    // 함수 생성 - 객체의 key를 통해서 객체 정보를 텍스트로 출력하는 함수
+    function pizzaInfo(pizzaName){
+        const text = `이 피자 브랜드는 ${pizzaName['pizza brand']}, 토핑은 ${pizzaName.topping}, 가격은 ${pizzaName.price}이다`
+        console.log(text)
+    }
+ 
+     // 객체 정보를 pizzInfo함수를 통해 호출 한다. 
+     pizzaInfo(bulgogiPizza)
+     pizzaInfo(seafoodPizza)
+
+    </script>
+    
+</body>
+</html>

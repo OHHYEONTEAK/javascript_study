@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 객체의 get , set </title>
+</head>
+<body>
+
+    <script>
+      
+      // get 은 기존데이터를 가지고서 조회하는 기능을 한다. 
+      let numbers ={
+        a : 3,
+        b: 2,
+        get add(){
+            console.log('add 함수가 실행됩니다');
+            return this.a+this.b;
+        }
+      }
+      // get 함수를 불러올때 numbers.add()가 아닌 numbers.add
+      console.log(numbers.add)
+      numbers.b =7;
+      console.log(numbers.add)
+
+      // set 함수
+      let numbers2 = {
+          _c: 1,
+          _d: 2,
+          sum: 3,
+          calculate(){
+            console.log('계산')
+            this.sum = this._c+this._d
+          },
+          get c(){
+            return this._c
+          },
+
+          get d(){
+            return this._d
+          },
+          set c(value){
+            this._c= value;
+            this.calculate()
+          },
+          set d(value){
+            this._d = value
+            this.calculate()
+          }
+      }
+      console.log(numbers2.sum) //3   (초기값 1+2 =3)
+      numbers2.c = 4;   // 계산       (_c의 1값을 c에서 4로 수정)
+      console.log(numbers2.sum) //6   (수정된_c값으로 4+2=6)
+      numbers2.d = 5;  // 계산         (_d의 2값을 d에서 5로 수정)
+      console.log(numbers2.sum)  // 9  (수정된_d값으로 4+5=9)    
+    </script>
+    
+</body>
+</html>

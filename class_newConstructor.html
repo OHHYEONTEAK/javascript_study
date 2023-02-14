@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 객체생성자</title>
+</head>
+<body>
+
+<script>
+
+// 객체생성자 함수 - 반복적으로 사용할 객체의 특성,로직등을 틀(껍데기)을 미리 만들어둠
+  function Animal(type, name, sound){ // 데이터를 받아주고 저장하는 공간 = 매개변수 = parameter 
+              // ('개', '바둑이', '멍멍') 가 들어감
+    this.type = type;    // this.type = '개'
+    this.name = name;    // this.name = '바둑이'
+    this.sound = sound;  // this.sound = '멍멍'
+  } 
+  // 함수종료
+  // protoype - say() 속성을  Animal함수 외부에서 만들어 작성
+  // prototype 역할: 객체생성자함수로 만든것을 객체끼리 공유하고싶은 함수나, 값을 설정한다. 
+
+  Animal.prototype.say = function(){console.log(this.sound)}
+  Animal.prototype.sharedValue = '사람과 친한 동물'
+
+  // 객체생성자 함수 실제 사용해 보는 단계 !!
+
+  const dog = new Animal('개', '바둑이', '멍멍')  // 파라미터에 들어갈 실제 속성데이터
+  const cat = new Animal('고양', '네오', '야옹')
+  const tiger = new Animal('호랑이', '호랭이', '어흥')
+
+  dog.say()
+  cat.say()
+
+  dog.sharedValue;
+  cat.sharedValue;
+console.log(dog.sharedValue)
+console.log(cat.sharedValue)
+
+console.log(dog)
+console.log(cat)
+
+  
+
+// 개발자들이 보통 내부적으로 테스트용으로 확인시 사용 
+  console.log(dog)
+  console.log(cat)
+  console.log(tiger)
+
+
+
+  // 객체의 상속 - 예제:
+  // 증조할아버지로부터 자녀가 물려받은 특성 
+
+  // 증조할아버지
+  function Great_grandfather(){
+    this.eyes = '검은눈';
+  }
+
+  //할아버지
+  function Grandfather(){
+    this.hair = '곱슬머리'
+  }
+
+  Grandfather.prototype = new Great_grandfather()  // 상속:  Grandfather.prototype에  (this.eyes = '검은눈') 을 대입
+//  할아버지
+//  function Grandfather(){
+//     this.hair = '곱슬머리'
+//     this.eyes = '검은눈'
+//   }
+
+  //아버지
+  function Father(){
+    this.skin = '하얀피부'
+  }
+
+  Father.prototype = new Grandfather() // 상속 : 증조할아버지속성을 물려받은 할아버지속성을 다시 아버지가 상속받음
+  //   아버지
+  //  function Father(){
+  //    this.skin = '하얀피부'
+  //    this.hair = '곱슬머리'
+  //    this.eyes = '검은눈'
+  // }
+
+  function Baby(){
+    this.name = '홍길동';
+  }
+
+  Baby.prototype = new Father()
+   //   아기
+  //  function Baby(){
+  //    this.name = '홍길동';
+
+  //    this.skin = '하얀피부'
+  //    this.hair = '곱슬머리'
+  //    this.eyes = '검은눈'
+  // }
+
+  let yourBaby = new Baby();
+  if(Great_grandfather.prototype.isPrototypeOf(yourBaby)){
+    // 조건식 - Baby가 Great_grandfather의 특성을 상속받았다면 , true 라면 
+    console.log(yourBaby.name)
+
+    console.log(yourBaby.eyes)
+    console.log(yourBaby.hair)
+    console.log(yourBaby.skin)
+  }
+
+  console.log(yourBaby)
+
+  // isPrototypeOf 예제  : 상속이 되면 true, 아니면  false 를 반환
+  
+   let day = new Date()
+   console.log(Date.prototype.isPrototypeOf(day)); // true 
+  
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+</script>
+
+</body>
+</html>

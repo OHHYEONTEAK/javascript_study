@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+     // 함수 표현 방식 3개 비교 
+     // 방법1. 일반 함수 
+     // function add(a,b){ return a+b}
+    
+     // 방법2. 화살표 함수 
+     // const add = (a,b)=>{ return a+b}
+    
+     // 방법3. 화살표 함수 
+        const add = (a,b)=> a+b
+     
+     // 함수 호출  
+        const sum= add(15,10) 
+        console.log(sum)
+
+     // 추가예제 
+        // 1) 아래 일반함수 표현식을 화살표함수로 변경하기
+        // function double (n){ return n*2}
+        let double = n =>n*2
+
+        //2) alert 로 데이터는3을  함수에 넣고 호출해서 출력하기 
+        alert(double(4))
+
+    </script>
+</body>
+</html>

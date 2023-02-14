@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> new 연산자로 객체 생성하는 방법 </title>
+</head>
+<body>
+
+    <script>
+
+// 1. new Object() 로 객체 생성하기
+   let myObj = new Object();
+   myObj.name = '홍길동';  // 객체명.키  = '넣을 데이터'
+   myObj['age'] = 20;       // myObj.age= 20;  와 동일
+   myObj.hello = function(){
+    console.log( `이름은 ${this.name}이고, 나이는${this.age} 입니다.` )
+   }
+   // return `이름은 ${this.name}이고, 나이는${this.age} 입니다.` 
+   // console.log(myObj)
+   myObj.hello()
+   
+
+// 2. new 생성자(): Number, String, Array등의 내장객체를 활용해서 new로 생성
+   // 2-1 String 객체생성 
+    let strObj = new String('hello')
+    console.log(strObj)
+  // 2-2 Array 객체생성
+    let arrObj = new Array([1,2,3])
+    console.log(arrObj)
+    
+//3. new  사용자정의  
+
+    function Car( name, color, year){
+        this.name= name;
+        this.color = color;
+        this.year= year;
+    }
+
+    let car1 = new Car('SM6','black', 2020)
+    let car2 = new Car('GV70', 'gray', 2021)
+
+    document.write(`차종은 ${car1.name}, 색상은 ${car1.color}이다. `)
+    document.write('<br>')
+    document.write(`차종은 ${car2.name}, 색상은 ${car2.color}이다. `)
+    document.write('<br>')
+
+
+    function Circle(radius){
+        this.radius = radius;
+        this.diameter = function(){
+            return 2*this.radius
+        }
+    }
+    const circle1 = new Circle(10)
+    document.write(`circle1의 반지름은 ${circle1.radius}, 지름은 ${circle1.diameter()}`)
+
+
+
+     
+
+   </script>    
+
+</body>
+</html>

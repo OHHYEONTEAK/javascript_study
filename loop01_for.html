@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 반복문 for </title>
+</head>
+<body>
+
+    <script>
+       const cars = ['Toyota', 'Ford', 'BMW', 'KIA']
+       // for 반복문 - for(초기시작; 조건식; 증감){ 실행문 }
+       for(let i=0; i<4; i++){ //  0 < 4 (= cars.length)
+        console.log(cars[i])
+       }
+
+       // for of 
+       // for ( let 데이터하나를 받아줄 변수명 of 전체배열변수명 ){ }
+       const nations = ['Korea', 'Japan','Spain','Canada']
+       for(let nation of nations){console.log(nation)}
+
+       // forEach
+       const fruits =['apple','banana','kiwi']
+       fruits.forEach(function (fruit, index, array){ console.log(fruit, index, array)}
+       )
+
+       // for 반복문 - 감소
+       for(i=3; i>0; i--){
+        console.log(`-1씩 감소하는 반복: ${i}`)
+       }
+
+       // 이중 for문
+       for(let i=1; i<3; i++){
+        for(let j=1; j<4; j++){
+            console.log(`1~3까지 ${i}번째 작성:${j}`)
+        }
+       }
+
+       // 이중 for문 - 구구단 출력
+       for( let i=2; i<10; i++){
+        for(let j=1; j<10; j++){
+            document.write(i+"x"+j+"="+(i*j)+"<br>")
+        }
+       }
+
+       document.write('<br>')
+       
+       // 이중 for문 - 별표찍기
+       for(let i =1 ; i<6; i++){
+        for(let star =1; star<=i; star++){
+            document.write('*')
+        }
+        document.write('<br>')
+       }
+       
+
+    // for, if  혼합
+       for( let num =0; num <=4; num++){
+        if(num%2!==0) continue;
+        console.log(num)
+       }
+
+       for( let num=11; num<=15; num++){
+        if(num > 13) break;
+        console.log(num);
+       }
+
+
+
+
+    </script>
+</body>
+</html>

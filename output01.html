@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> 출력 방식 4가지 </title>
+    </head>
+
+    <body>
+
+    <!-- 1. console.log() : 개발자도구 콘솔탭에서 출력 -->
+    <script> 
+        console.log(5*5)
+    </script>
+
+    <!-- 2. document.write() : 브라우저 화면에서 출력-->
+        <script> 
+            document.write('브라우저 화면에 출력됩니다!')
+        </script>
+    
+    <!-- 3. innerHTML : 브라우저 화면에서 출력 (html태그의 id, class 선택자명 활용)-->
+        <p id="num"></p>
+
+        <script> 
+        document.getElementById("num").innerHTML= 5+5
+        </script> 
+
+    <!-- 4. window.alert()  : 브라우저 화면에서 출력- -->
+        <button onclick="alertBox()"> alert 상자 </button>
+        
+        <script>
+            function alertBox(){
+            alert("확인을 누를때 까지 다른작업을 할수 없음")
+            }
+        </script>
+
+    </body>
+</html>
